@@ -24,7 +24,7 @@ end
 
 When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   rating_list.split(%r{,\s*}).each do |rating|
-    step %{I #{uncheck}check \"ratings_#{rating}\"}
+    When %{I #{uncheck}check \"ratings_#{rating}\"}
   end
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
